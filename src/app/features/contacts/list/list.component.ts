@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <p>
-      list works!
+      LISTADO DE CONTACTOS
     </p>
   `,
   styles: ``
