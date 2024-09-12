@@ -8,6 +8,4 @@ const contactsRoutes: Routes = [
 
 ]
 
-
-
 export default contactsRoutes;

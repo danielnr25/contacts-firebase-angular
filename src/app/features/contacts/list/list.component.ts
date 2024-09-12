@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-
+import { GridComponent } from '@components/grid/grid.component';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [],
+  imports: [GridComponent],
   template: `
-    <p>
-      LISTADO DE CONTACTOS
-    </p>
+    <section>
+     <app-grid/>
+    </section>
   `,
   styles: ``
 })
