@@ -22,16 +22,35 @@ export class ContactService{
       updated:Date.now()
     })
   }
+
   // Método para obtener un contacto por id
+  async getContactById(id:string):Promise<Contact>{
+    const docRef = this._getDocRef(id);
+    const documentData = await getDoc(docRef);
+    return documentData.data() as Contact;
+  }
 
   // Método para actualizar un contacto
+  updateContact(id:string,contact:Contact):void{
+    const docRef = this._getDocRef(id);
+    updateDoc(docRef, {...contact}); // ...contact: se va utilizar para destructurar el objeto Contact y enviarlo como un objeto independiente
+  }
 
   // Método para eliminar un contacto
+  deleteContact(id:string):void{
+    const docRef = this._getDocRef(id); //doc(db, "cities", "id")
+    deleteDoc(docRef);
+  }
 
   // Método para obtener todos los contactos
   getAllContacts():Observable<Contact[]>{
     const queryFn = query(this._contactCollection,orderBy('created','desc'));
     return collectionData(queryFn,{idField:'id'}) as Observable<Contact[]>;
+  }
+
+  // método privado para obtener la referencia
+  private _getDocRef(id:string){
+    return doc(this._firestore,APP_CONSTANTS.COLLECTION_NAME,id);
   }
 
 }
