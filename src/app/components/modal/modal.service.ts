@@ -9,7 +9,7 @@ export class ModalService{
 
   openModal<CT,T=Contact>(componenRef:ComponentType<CT>,data?:T,isEditing=false):void{
     const config = {data,isEditing};
-    this.dialog.open(componenRef,{width:'400px',data:config});
+    this.dialog.open(componenRef,{width:'500px',data:config});
   }
 
   closeModal():void{
