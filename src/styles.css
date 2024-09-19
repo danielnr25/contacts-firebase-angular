@@ -11,3 +11,7 @@ body {
 .spacer {
   flex: 1 1 auto;
 }/*# sourceMappingURL=styles.css.map */
+
+.mt-1{
+  margin-top: 1rem;
+}

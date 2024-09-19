@@ -7,7 +7,7 @@ import { ComponentType } from "@angular/cdk/portal";
 export class ModalService{
   private readonly dialog = inject(MatDialog);
 
-  openModal<CT,T=Contact>(componenRef:ComponentType<CT>,data?:T,isEditing=false):void{
+  openModal<CT,DATA=Contact>(componenRef:ComponentType<CT>,data?:DATA,isEditing=false):void{
     const config = {data,isEditing};
     this.dialog.open(componenRef,{width:'500px',data:config});
   }

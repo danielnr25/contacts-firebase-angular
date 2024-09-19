@@ -31,7 +31,7 @@ export class ModalComponent implements OnInit { //
   private readonly _modalSvc = inject(ModalService);
   private readonly _snackBarSvc = inject(SnackBarService);
 
-  ngOnInit(): void {
+  ngOnInit(): void { // es un método que se ejecuta cuando se inicia el componente
     this._buildForm();
     this.contactForm.patchValue(this._matDialog.data); // patchValue: es un método que se utiliza para establecer los valores de los campos del formulario de contacto
   }
@@ -41,7 +41,6 @@ export class ModalComponent implements OnInit { //
   }
 
   async onSubmit(){
-    console.log('submit');
     let message = APP_CONSTANTS.MESSAGES.CONTACT_UPDATED;
 
     const contact = this.contactForm.value;
