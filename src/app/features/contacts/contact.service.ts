@@ -53,4 +53,8 @@ export class ContactService{
     return doc(this._firestore,APP_CONSTANTS.COLLECTION_NAME,id);
   }
 
+  consultdate(){
+      //consulta de fecha de inicio y fin
+  }
+
 }
