@@ -1,6 +1,5 @@
 <section class="mt-1">
-  <app-filter [label]="'Nombre'" [placeholder]="'Buscar ...'"/>
-
+  <app-filter [label]="'Nombre'" [placeholder]="'Buscar ...'" [(filter)]="valueToFilter"/>
 
   <div class="mat-elevation-z8">
     <table mat-table matSort [dataSource]="dataSource">
@@ -29,8 +28,6 @@
         </ng-container>
 
       }
-
-
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns()"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns();"></tr>

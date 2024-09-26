@@ -33,6 +33,7 @@ dataSource = new MatTableDataSource<DATA>();
   private readonly _modalSvc = inject(ModalService);
   private readonly _snackBarSvc = inject(SnackBarService);
   private readonly _paginator = viewChild.required<MatPaginator>(MatPaginator);
+
   constructor() { // constructor
     effect(()=>{
       if(this.valueToFilter()){ // si hay un valor para filtrar
@@ -63,7 +64,7 @@ dataSource = new MatTableDataSource<DATA>();
   }
 
   deleteContact(id:string): void{
-    const confirmation = confirm(APP_CONSTANTS.MESSAGES.CONTACT_DELETED); // muestra un mensaje de confirmación
+    const confirmation = confirm(APP_CONSTANTS.MESSAGES.CONFIRMATION_PROMPT); // muestra un mensaje de confirmación
     if(confirmation){ // si se confirma la eliminación
       this._contactSvc.deleteContact(id); // elimina el contacto
       this._snackBarSvc.openSnackBar(APP_CONSTANTS.MESSAGES.CONTACT_DELETED,'ok'); // muestra un mensaje de éxito

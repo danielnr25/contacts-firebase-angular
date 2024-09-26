@@ -1,4 +1,4 @@
-import { Component, input, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 import { MatInput } from '@angular/material/input';
 import { MatFormField,MatLabel } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ const MATERIAL_MODULES = [MatInput,MatFormField,MatLabel];
       <input matInput type="text" [(ngModel)]="filter" [placeholder]="placeholder()">
     </mat-form-field>
   `,
-  styles: ``
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class FilterComponent {
