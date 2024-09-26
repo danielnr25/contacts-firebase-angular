@@ -30,9 +30,8 @@ export class ListComponent implements OnInit {
   getAllContacts(){
     this._contactSvc.getAllContacts()
     .pipe(takeUntilDestroyed(this._destroyRef),
+      //tap((contacts:Contact[]) => this.data = [...contacts]))
       tap((contacts:Contact[]) =>this.contacts.set(contacts)))
     .subscribe();
   }
-
-
 }
